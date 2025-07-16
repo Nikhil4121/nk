@@ -548,11 +548,11 @@
       <textarea name="message" rows="5" placeholder="Your Message" required aria-label="Your Message"></textarea>
       <button type="submit">Send</button>
     </form>
-    <ul>
-      {% for user in users %}
-       <li> {{user.name}} - {{user.email}} - {{user.message}}</li>
-      {% endfor %} 
-    </ul>
+     {% for category, message in get_flashed_messages(with_categories = true) %}
+       <div class=" alert alert-{{category}}">
+         {{ message}}
+        </div>
+      {% endfor %}
     <div class="social-links" aria-label="Social media links">
       <a href="https://github.com/Nikhil4121" target="_blank" rel="noopener" aria-label="GitHub Profile" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.085 1.838 1.234 1.838 1.234 1.07 1.835 2.809 1.305 3.495.998.107-.776.418-1.305.763-1.605-2.665-.3-5.466-1.335-5.466-5.933 0-1.311.465-2.381 1.235-3.221-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 013.003-.403c1.02.005 2.045.138 3.003.403 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.628-5.476 5.923.43.372.823 1.102.823 2.222v3.293c0 .321.216.694.825.576C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/></svg></a>
       <a href="https://www.linkedin.com/in/nikhil-sharma-6b0b98281/" target="_blank" rel="noopener" aria-label="LinkedIn Profile" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM.18 8h4.62v13.5H.18V8zM9 8h4.44v1.84h.06c.62-1.18 2.13-2.42 4.38-2.42 4.68 0 5.55 3.1 5.55 7.13V21.5H19v-6.84c0-1.63-.03-3.73-2.27-3.73-2.27 0-2.61 1.78-2.61 3.6V21.5H9V8z"/></svg></a>
